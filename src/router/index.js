@@ -4,9 +4,17 @@ import Nav from "../components/Nav";
 
 //Views
 import Homepage from "../views/HomePage";
+import Results from "../views/Results";
 
-const router = async () => {
+const routes = {
+    '': Homepage,
+    '#home': Homepage,
+    '#results': Results
+};
 
+const router = async (route) => {
+
+    console.log(route);
     //Components
     const header = document.querySelector('.header');
     header.innerHTML = await Header();
@@ -14,8 +22,9 @@ const router = async () => {
     nav.innerHTML = await Nav();
     
     //Views
-    const homepage = document.querySelector('.container');
-    homepage.innerHTML = await Homepage();
+    const container = document.querySelector('.container');
+    let render = routes[route] ? routes[route] : Homepage;
+    container.innerHTML = await render();
 }
 
 export default router;

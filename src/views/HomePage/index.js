@@ -7,7 +7,6 @@ const Homepage = async() => {
               <input class="search--input" type="text">
               <div class="search--buttons">   
                 <button class="search--button">Consultar</button>
-                <button class="search--button-all">Atraparlos a todos</button>
               </div>
             </div>
         </div>
