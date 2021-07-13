@@ -23,7 +23,7 @@ const router = async (route) => {
     
     //Views
     const container = document.querySelector('.container');
-    let render = routes[route] ? routes[route] : Homepage;
+     let render = routes[route] ? routes[route] : Homepage;
     container.innerHTML = await render();
 }
 

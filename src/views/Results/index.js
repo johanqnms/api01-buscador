@@ -3,7 +3,10 @@ import getData from "../../utils/getData";
 
 
 const Results = async() => {
-    const animes = await getData();
+
+    let userInput = localStorage.getItem('userSearch');
+    console.log(`Dato Results: ${userInput}`);
+    const animes = await getData(userInput);
     const view = `
     <div class="container--results">
         <h1>Resultados de la búsqueda</h1>
